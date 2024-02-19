@@ -20,8 +20,6 @@ export default function Panel() {
         radius * Math.cos(phi)
     ];
 
-    console.log(position);
-
     useFrame(() => {
         panel.current.lookAt(0,0,0)
     })
