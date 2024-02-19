@@ -7,17 +7,31 @@ export default function Card() {
     const panel = useRef();
 
     // Randomly position panels on the globe
-    const phi = Math.random() * Math.PI;
-    const theta = Math.random() * 2 * Math.PI;
+    // const phi = Math.random() * Math.PI;
+    // const theta = Math.random() * 2 * Math.PI;
 
-    const radius = 70 * getRandomArbitrary(0.8,1);
+    // const radius = 70 * getRandomArbitrary(0.8,1);
 
     // Calculate the position on the sphere
+    // const position = [
+    //     radius * Math.sin(phi) * Math.cos(theta),
+    //     getRandomArbitrary(-10,10),
+    //     radius * Math.cos(phi)
+    // ];
+
+    const radius = 50 * getRandomArbitrary(0.8,1);
+    const randomAngle = Math.random() * Math.PI * 2;
+    const randomHeight = Math.random() * 2;
+
+    const x = Math.cos(randomAngle) * radius;
+    const y = getRandomArbitrary(-5, 5);
+    const z = Math.sin(randomAngle) * radius;
+    
     const position = [
-        radius * Math.sin(phi) * Math.cos(theta),
-        radius * Math.sin(phi) * Math.sin(theta),
-        radius * Math.cos(phi)
-    ];
+        x,
+        y,
+        z
+    ]
 
     useFrame(() => {
         panel.current.lookAt(0,0,0);

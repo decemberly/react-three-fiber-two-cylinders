@@ -1,6 +1,6 @@
 import Card from "./Card";
 
-const NUMBER_OF_PANELS = 300;
+const NUMBER_OF_PANELS = 100;
 
 export default function CardGroup() {
 

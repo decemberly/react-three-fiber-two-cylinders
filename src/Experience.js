@@ -16,11 +16,13 @@ export default function Experience() {
 
     return (
         <group ref={scene}>
-            <mesh ref={sphere} rotation={ [Math.PI / 2, 0, Math.PI / 2]}>
-                <sphereGeometry args={[70, 32, 32]} />
-                <meshBasicMaterial color={0x2194ce} wireframe />
-            </mesh>
-            <CardGroup />
+            <group rotation={ [Math.PI / 2, 0, Math.PI / 2]}>
+                <mesh ref={sphere}>
+                    <cylinderGeometry args={[50, 50, 10, 32, 1, true]} />
+                    <meshBasicMaterial color={0x2194ce} wireframe />
+                </mesh>
+                <CardGroup />
+            </group>
         </group>
     )
 }
