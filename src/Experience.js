@@ -5,7 +5,7 @@ import { useFrame } from '@react-three/fiber'
 import {
     useScroll
 } from "@react-three/drei";
-import PanelGroup from './PanelGroup';
+import CardGroup from './CardGroup';
 
 export default function Experience() {
     const scroll = useScroll()
@@ -21,7 +21,7 @@ export default function Experience() {
                     <sphereGeometry args={[70, 32, 32]} />
                     <meshBasicMaterial color={0x2194ce} wireframe />
                 </mesh>
-                <PanelGroup />
+                <CardGroup />
             </group>
         </>
     )
