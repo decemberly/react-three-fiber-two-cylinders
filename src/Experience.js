@@ -12,7 +12,7 @@ export default function Experience() {
     const scene = useRef();
     const sphere = useRef();
 
-    useFrame(() => (scene.current.rotation.x = scroll.offset * Math.PI * 2));
+    useFrame(() => (scene.current.rotation.x = scroll.offset * Math.PI * -2));
 
     return (
         <group ref={scene}>
