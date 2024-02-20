@@ -9,8 +9,8 @@ import Experience from './Experience'
 const root = ReactDOM.createRoot(document.querySelector('#root'))
 
 root.render(
-    <Canvas camera={{ fov: 75, position: [0,0,62]}}>
-        <ScrollControls distance={6} damping={1} infinite={true}> 
+    <Canvas camera={{ fov: 75, position: [0,0,32]}}>
+        <ScrollControls distance={8} damping={1} infinite={true}> 
             <Experience />
         </ScrollControls>
     </Canvas>
