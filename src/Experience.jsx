@@ -13,8 +13,8 @@ export default function Experience({wireframes}) {
     const wheel2 = useRef();
 
     useFrame(() => {
-        wheel1.current.rotation.x = scroll.offset * Math.PI * 2;
-        wheel2.current.rotation.x = scroll.offset * Math.PI * -2;
+        wheel1.current.rotation.x = scroll.offset * Math.PI * -2;
+        wheel2.current.rotation.x = scroll.offset * Math.PI * 2;
     });
 
     return (
