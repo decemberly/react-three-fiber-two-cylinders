@@ -13,7 +13,7 @@ export default function App() {
         <>
             <button onClick={() => setWireframes(!wireframes)} style={{fontSize: 22, margin: 10, position: 'absolute', zIndex: 9999}}>Toggle wireframes</button>
             <Canvas camera={{ fov: 75, position: [0, 0, 42] }}>
-                <ScrollControls distance={8} damping={1} infinite={true}> 
+                <ScrollControls distance={8} damping={1} maxSpeed={0.2} infinite={true}> 
                     <Experience wireframes={wireframes} />
                 </ScrollControls>
             </Canvas>
