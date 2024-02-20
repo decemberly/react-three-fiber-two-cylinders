@@ -7,7 +7,7 @@ import {
 } from "@react-three/drei";
 import CardGroup from './CardGroup';
 
-export default function Experience() {
+export default function Experience({wireframes}) {
     const scroll = useScroll();
     const wheel1 = useRef();
     const wheel2 = useRef();
@@ -22,14 +22,14 @@ export default function Experience() {
             <group ref={wheel1} rotation={ [Math.PI / 2, 0, Math.PI / 2]}>
                 <mesh>
                     <cylinderGeometry args={[50, 50, 60, 32, 1, true]} />
-                    <meshBasicMaterial color={0x2194ce} wireframe />
+                    <meshBasicMaterial color={0x2194ce} wireframe={wireframes} />
                 </mesh>
                 <CardGroup radius={50} width={60} wheel="back" />
             </group>
             <group ref={wheel2} rotation={[Math.PI / 2, 0, Math.PI / 2]} position={[0,0,66]}>
                 <mesh>
                     <cylinderGeometry args={[50, 50, 10, 32, 1, true]} />
-                    <meshBasicMaterial color="red" wireframe />
+                    <meshBasicMaterial color="red" wireframe={wireframes} />
                 </mesh>
                 <CardGroup radius={50} width={10} wheel="front" />
             </group>
