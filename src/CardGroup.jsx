@@ -9,7 +9,7 @@ export default function CardGroup({ radius, width, wheel }) {
 
         for (let i = 0; i < NUMBER_OF_PANELS; i++) {
 
-            content.push(<Card key={i} radius={radius} width={width} wheel={wheel} />);
+            content.push(<Card key={i} radius={radius} width={width} wheel={wheel} index={i} />);
         }
         return content;
     };
