@@ -22,11 +22,11 @@ export default function Experience({wireframes}) {
             <group ref={wheel1} rotation={[Math.PI / 2, 0, Math.PI / 2]}>
                 { wireframes && 
                     <mesh>
-                        <cylinderGeometry args={[70, 70, 40, 32, 1, true]} />
+                        <cylinderGeometry args={[80, 80, 80, 32, 1, true]} />
                         <meshBasicMaterial color={0x2194ce} wireframe />
                     </mesh>
                 }
-                <CardGroup radius={70} width={60} wheel="back" />
+                <CardGroup radius={80} width={60} wheel="back" />
             </group>
             <group ref={wheel2} rotation={[Math.PI / 2, 0, Math.PI / 2]} position={[0, 0, 117]}>
                 { wireframes && 

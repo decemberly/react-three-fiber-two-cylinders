@@ -22,9 +22,9 @@ export default function Card({ radius, wheel, index = 0 }) {
 
     if (wheel === 'back') { 
         position = [
-            Math.cos(randomAngle) * radius * getRandomArbitrary(0.6, 1.4),
-            getRandomArbitrary(-35, 35),
-            Math.sin(randomAngle) * radius * getRandomArbitrary(0.6, 1.4),
+            Math.cos(randomAngle) * radius * getRandomArbitrary(0.7, 1.8),
+            getRandomArbitrary(-40, 40),
+            Math.sin(randomAngle) * radius * getRandomArbitrary(0.7, 1.8),
         ];
 
         size = [
