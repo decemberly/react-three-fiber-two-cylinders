@@ -11,7 +11,6 @@ export default function CardGroup({ radius, width, wheel }) {
 
             content.push(<Card key={i} radius={radius} width={width} wheel={wheel} />);
         }
-
         return content;
     };
 

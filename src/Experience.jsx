@@ -19,18 +19,22 @@ export default function Experience({wireframes}) {
 
     return (
         <>
-            <group ref={wheel1} rotation={ [Math.PI / 2, 0, Math.PI / 2]}>
-                <mesh>
-                    <cylinderGeometry args={[50, 50, 60, 32, 1, true]} />
-                    <meshBasicMaterial color={0x2194ce} wireframe={wireframes} />
-                </mesh>
+            <group ref={wheel1} rotation={[Math.PI / 2, 0, Math.PI / 2]}>
+                { wireframes && 
+                    <mesh>
+                        <cylinderGeometry args={[50, 50, 60, 32, 1, true]} />
+                        <meshBasicMaterial color={0x2194ce} wireframe />
+                    </mesh>
+                }
                 <CardGroup radius={50} width={60} wheel="back" />
             </group>
-            <group ref={wheel2} rotation={[Math.PI / 2, 0, Math.PI / 2]} position={[0,0,66]}>
-                <mesh>
-                    <cylinderGeometry args={[50, 50, 10, 32, 1, true]} />
-                    <meshBasicMaterial color="red" wireframe={wireframes} />
-                </mesh>
+            <group ref={wheel2} rotation={[Math.PI / 2, 0, Math.PI / 2]} position={[0, 0, 66]}>
+                { wireframes && 
+                    <mesh>
+                        <cylinderGeometry args={[50, 50, 10, 32, 1, true]} />
+                        <meshBasicMaterial color="red" wireframe />
+                    </mesh>
+                }
                 <CardGroup radius={50} width={10} wheel="front" />
             </group>
         </>
