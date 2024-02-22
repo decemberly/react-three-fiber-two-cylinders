@@ -19,6 +19,16 @@ export default function Experience() {
         }
     })
 
+    const cardControls = useControls('Cards',{
+        number: {
+            label: 'Number of cards',
+            value: 100,
+            min: 80,
+            max: 400,
+            steps: 10
+        }
+    })
+
     const backWheelControls = useControls('Back Wheel', { 
         size: {
             label: 'Size',
@@ -60,14 +70,14 @@ export default function Experience() {
                         <cylinderGeometry args={[backWheelControls.size, backWheelControls.size, backWheelControls.size, 32, 1, true]} />
                         <meshBasicMaterial color={0x2194ce} wireframe />
                     </mesh>
-                <CardGroup cardScale={backWheelControls.cardScale} radius={backWheelControls.size} width={backWheelControls.size * 0.75} wheel="back" />
+                <CardGroup number={cardControls.number} cardScale={backWheelControls.cardScale} radius={backWheelControls.size} width={backWheelControls.size * 0.75} wheel="back" />
             </group>
             <group ref={frontWheel} rotation={[Math.PI / 2, 0, Math.PI / 2]} position={[0, 0, 117]}>
                     <mesh visible={frontWheelControls.visible}>
                         <cylinderGeometry args={[80, 80, 3, 32, 1, true]} />
                         <meshBasicMaterial color="red" wireframe />
                     </mesh>
-                <CardGroup radius={80} width={10} wheel="front" />
+                <CardGroup number={cardControls.number} radius={80} width={10} wheel="front" />
             </group>
         </>
     )
