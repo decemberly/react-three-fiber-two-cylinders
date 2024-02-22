@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { useLoader, useFrame } from '@react-three/fiber'
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 
-export default function Card({ radius, wheel, index = 0 }) {
+export default function Card({ radius, wheel, index = 0, cardScale = 1 }) {
     const image = useLoader(TextureLoader, 'https://images.unsplash.com/photo-1542037237840-e4817c5b6d6e?q=80&w=2812&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     const panel = useRef();
 
@@ -42,7 +42,7 @@ export default function Card({ radius, wheel, index = 0 }) {
     })
 
     return (
-        <mesh ref={panel} position={position}>
+        <mesh ref={panel} position={position} scale={cardScale}>
             <boxGeometry args={size} />
             <meshBasicMaterial map={image} />
         </mesh>

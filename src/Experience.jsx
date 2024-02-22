@@ -11,13 +11,30 @@ export default function Experience() {
     const backWheel = useRef();
     const frontWheel = useRef();
 
-    const { backWheelSize, cylinderVisibility } = useControls({ 
-        backWheelSize: {
+    const backWheelControls = useControls('Back Wheel', { 
+        size: {
+            label: 'Size',
             value: 80,
             min: 30,
             max: 400
         },
-        cylinderVisibility: false
+        visible: {
+            label: 'Show wireframe',
+            value: false
+        },
+        cardScale: {
+            label: 'Card scale',
+            value: 1,
+            min: 0.1,
+            max: 20,
+        },
+    });
+
+    const frontWheelControls = useControls('Front Wheel', { 
+        visible: {
+            label: 'Show wireframe',
+            value: false
+        }
     });
 
     useFrame(() => {
@@ -27,15 +44,15 @@ export default function Experience() {
 
     return (
         <>
-            <group ref={backWheel} rotation={[Math.PI / 2, 0, Math.PI / 2]} position={[0, 0, - backWheelSize + 80]}>
-                    <mesh visible={cylinderVisibility}>
-                        <cylinderGeometry args={[backWheelSize, backWheelSize, backWheelSize, 32, 1, true]} />
+            <group ref={backWheel} rotation={[Math.PI / 2, 0, Math.PI / 2]} position={[0, 0, - backWheelControls.size + 80]}>
+                    <mesh visible={backWheelControls.visible}>
+                        <cylinderGeometry args={[backWheelControls.size, backWheelControls.size, backWheelControls.size, 32, 1, true]} />
                         <meshBasicMaterial color={0x2194ce} wireframe />
                     </mesh>
-                <CardGroup radius={backWheelSize} width={backWheelSize * 0.75} wheel="back" />
+                <CardGroup cardScale={backWheelControls.cardScale} radius={backWheelControls.size} width={backWheelControls.size * 0.75} wheel="back" />
             </group>
             <group ref={frontWheel} rotation={[Math.PI / 2, 0, Math.PI / 2]} position={[0, 0, 117]}>
-                    <mesh visible={cylinderVisibility}>
+                    <mesh visible={frontWheelControls.visible}>
                         <cylinderGeometry args={[80, 80, 3, 32, 1, true]} />
                         <meshBasicMaterial color="red" wireframe />
                     </mesh>
