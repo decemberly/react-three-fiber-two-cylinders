@@ -1,9 +1,17 @@
 import './style.css'
 import ReactDOM from 'react-dom/client'
-import App from './App'
+import { Canvas } from '@react-three/fiber'
+import {
+  ScrollControls
+} from "@react-three/drei";
+import Experience from './Experience'
 
 const root = ReactDOM.createRoot(document.querySelector('#root'))
 
 root.render(
-    <App />
+    <Canvas camera={{ fov: 75, position: [0, 0, 42] }}>
+        <ScrollControls distance={8} damping={1} maxSpeed={0.2} infinite={true}> 
+            <Experience />
+        </ScrollControls>
+    </Canvas>
 )

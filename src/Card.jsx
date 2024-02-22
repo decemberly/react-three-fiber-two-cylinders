@@ -23,7 +23,7 @@ export default function Card({ radius, wheel, index = 0 }) {
     if (wheel === 'back') { 
         position = [
             Math.cos(randomAngle) * radius * getRandomArbitrary(0.7, 1.8),
-            getRandomArbitrary(-40, 40),
+            getRandomArbitrary(-radius/2, radius/2),
             Math.sin(randomAngle) * radius * getRandomArbitrary(0.7, 1.8),
         ];
 
