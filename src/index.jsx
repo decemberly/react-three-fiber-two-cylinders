@@ -5,13 +5,17 @@ import {
   ScrollControls
 } from "@react-three/drei";
 import Experience from './Experience'
+import { Leva } from 'leva'
 
 const root = ReactDOM.createRoot(document.querySelector('#root'))
 
 root.render(
-    <Canvas camera={{ fov: 75, position: [0, 0, 42] }}>
-        <ScrollControls distance={8} damping={1} maxSpeed={0.2} infinite={true}> 
-            <Experience />
-        </ScrollControls>
-    </Canvas>
+    <>
+        <Leva collapsed />
+            <Canvas camera={{ fov: 75, position: [0, 0, 42] }}>
+            <ScrollControls distance={8} damping={1} maxSpeed={0.2} infinite={true}> 
+                <Experience />
+            </ScrollControls>
+        </Canvas>
+    </>
 )

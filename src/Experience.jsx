@@ -5,11 +5,19 @@ import {
 } from "@react-three/drei";
 import { useControls } from 'leva'
 import CardGroup from './CardGroup';
+import { Perf } from 'r3f-perf'
 
 export default function Experience() {
     const scroll = useScroll();
     const backWheel = useRef();
     const frontWheel = useRef();
+
+    const { perfVisible } = useControls({
+        perfVisible: {
+            label: 'Show performance',
+            value: true
+        }
+    })
 
     const backWheelControls = useControls('Back Wheel', { 
         size: {
@@ -44,6 +52,9 @@ export default function Experience() {
 
     return (
         <>
+            { perfVisible && 
+                <Perf position="top-left" />
+            }
             <group ref={backWheel} rotation={[Math.PI / 2, 0, Math.PI / 2]} position={[0, 0, - backWheelControls.size + 80]}>
                     <mesh visible={backWheelControls.visible}>
                         <cylinderGeometry args={[backWheelControls.size, backWheelControls.size, backWheelControls.size, 32, 1, true]} />
